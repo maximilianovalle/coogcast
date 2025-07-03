@@ -10,7 +10,7 @@ app.use(cors(corsOptions));
 
 // sends fruits array as response when request is made to /api route
 app.get("/api", (req, res) => {
-    res.json({ fruits: ["apple", "banana", "cherry", "orange"] })
+    res.json({ fruits: ["apple", "banana", "cherry"] })
 });
 
 // run app
