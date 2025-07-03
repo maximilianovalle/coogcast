@@ -1,0 +1,19 @@
+#header {
+    --height: 8vh;
+
+    width: 100vw;
+    height: var(--height);
+    padding: 8px 8vw;
+    box-sizing: border-box;
+
+    color: var(--accent-color);
+    background-color: var(--main-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon {
+    height: calc(var(--height) / 1.75);
+}
