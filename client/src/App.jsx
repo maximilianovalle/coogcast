@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
 
+import Header from './components/Header.jsx';
+import Footer from './components/Footer.jsx';
+
 function App() {
   const [array, setArray] = useState([]);
 
@@ -15,13 +18,17 @@ function App() {
     fetchAPI();
   }, []);
 
-  return (
-    <>
-    {array.map((fruit, index) => 
-        <p key={index}>{fruit}</p>
-    )}
-    </>
-  )
+  return (<>
+    <Header />
+
+    <div id="contentContainer">
+      {array.map((fruit, index) => 
+          <p key={index}>{fruit}</p>
+      )}
+    </div>
+
+    <Footer />
+  </>)
 }
 
 export default App

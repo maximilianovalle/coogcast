@@ -11,8 +11,8 @@ const pool = new Pool ({
 
 const testDBConnection = async () => {
     try {
-        const response = await pool.query('SELECT * FROM weather');
-        console.log("✔ Connected to PostgreSQL DB:", response.rows[0]);
+        const response = await pool.query('SELECT NOW()');
+        console.log("✔ Connected to PostgreSQL DB:", response.rows[0].now);
     } catch (error) {
         console.error("✗ Failed to connect to PostgreSQL DB:", error);
         process.exit(1);

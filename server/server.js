@@ -1,6 +1,6 @@
 const express = require('express'); // import express
 const app = express();              // create app instance
-const db = require('./database');
+const db = require('./database');   // database.js connection
 
 const cors = require('cors');
 const corsOptions = {
