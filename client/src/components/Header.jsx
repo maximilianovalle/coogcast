@@ -1,4 +1,4 @@
-import './Header.css';
+import './HeaderFooter.css';
 import githubIcon from '../assets/github.svg';
 
 function Header() {

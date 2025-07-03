@@ -21,10 +21,16 @@ function App() {
   return (<>
     <Header />
 
-    <div id="contentContainer">
-      {/* {array.map((fruit, index) => 
-          <p key={index}>{fruit}</p>
-      )} */}
+    <div id="contentBody">
+      
+      <div id="informationContainer">
+
+      </div>
+
+      <div id="graphsContainer">
+
+      </div>
+
     </div>
 
     <Footer />
