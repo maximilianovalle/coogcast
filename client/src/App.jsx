@@ -22,9 +22,9 @@ function App() {
     <Header />
 
     <div id="contentContainer">
-      {array.map((fruit, index) => 
+      {/* {array.map((fruit, index) => 
           <p key={index}>{fruit}</p>
-      )}
+      )} */}
     </div>
 
     <Footer />

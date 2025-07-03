@@ -1,6 +1,12 @@
 :root {
-  --main-color: #232325;
+  --main-color: #2e2e35;
+  --secondary-color: #292931;
+  --tertiary-color: #16161d;
   --accent-color: #f7f1f1;
+
+  --header-height: 8vh;
+  --footer-height: 12vh;
+  --min-content-height: calc(100vh - var(--header-height) - var(--footer-height));
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

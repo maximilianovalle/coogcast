@@ -1,5 +1,13 @@
+body {
+  margin: 0px;
+  background: var(--main-color);
+  background: linear-gradient(90deg, var(--main-color) 0%, var(--secondary-color) 100%);
+}
+
 #contentContainer {
   width: 80vw;
+  min-height: var(--min-content-height);
   margin: 0px auto;
-  background-color: lightblue;
+
+  /* background-color: lightblue; */
 }
