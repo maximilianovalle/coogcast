@@ -1,8 +1,11 @@
 :root {
-  --main-color: #2e2e35;
-  --secondary-color: #292931;
+  --main-color: #dfdfe4;
+  --secondary-color: #dfdfe4;
   --tertiary-color: #16161d;
+
   --accent-color: #f7f1f1;
+  --accent-secondary: #eaeaee;
+  --contrast-light: #8ba6ff;
 
   --header-height: 8vh;
   --footer-height: 12vh;
@@ -29,6 +32,7 @@
 
 body {
   animation: 0.5s ease-in 0s 1 fadeInOpacity;
+  overflow-x: hidden;
   
   min-height: 100vh;
   width: 100vw;
@@ -39,8 +43,10 @@ body {
 h1, h2, h3, p, a {
   margin: 0px;
   padding: 0px;
-  
-  color: inherit;
+}
+
+a {
+  color: var(--contrast-light);
 }
 
 a:hover {

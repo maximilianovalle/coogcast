@@ -4,6 +4,8 @@ import axios from 'axios';
 
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
+import DisplayDiv from './components/main-content/displayDiv.jsx';
+import GraphsDiv from './components/main-content/graphsDiv.jsx';
 
 function App() {
   const [array, setArray] = useState([]);
@@ -23,13 +25,9 @@ function App() {
 
     <div id="contentBody">
       
-      <div id="informationContainer">
+      <DisplayDiv />
 
-      </div>
-
-      <div id="graphsContainer">
-
-      </div>
+      <GraphsDiv />
 
     </div>
 
