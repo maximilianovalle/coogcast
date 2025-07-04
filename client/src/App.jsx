@@ -20,7 +20,7 @@ function App() {
     fetchAPI();
   }, []);
 
-  return (<>
+  return (<div>
     <Header />
 
     <div id="contentBody">
@@ -29,10 +29,14 @@ function App() {
 
       <GraphsDiv />
 
+      <div id="littlePaw">
+        <p>Meet <a href="https://github.com/maximilianovalle/little-paw" target="_blank" rel="noopener noreferrer">Little Paw</a>, the IoT device working to serve you this data!</p>
+      </div>
+
     </div>
 
     <Footer />
-  </>)
+  </div>)
 }
 
 export default App

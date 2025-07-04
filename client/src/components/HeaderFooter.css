@@ -3,6 +3,7 @@
     padding: 8px 8vw;
     box-sizing: border-box;
 
+    text-align: center;
     color: var(--accent-color);
     background-color: var(--tertiary-color);
 
@@ -28,4 +29,19 @@ span {
 
 .icon {
     height: calc(var(--header-height) / 1.75);
+    padding-top: 4px;
+}
+
+@media only screen and (max-width: 950px) {
+    #header, #footer {
+        padding: 8px 4vw;
+    }
+
+    .text {
+        font-size: 1.5em;
+    }
+
+    .icon {
+        height: calc(var(--header-height) / 2);
+    }
 }

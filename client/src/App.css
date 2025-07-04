@@ -13,3 +13,30 @@ body {
   align-items: center;
   justify-content: space-around;
 }
+
+#littlePaw {
+  max-width: 14vw;
+  padding: 2vh 2vw;
+  margin-bottom: 4vh;
+
+  text-align: center;
+  font-weight: bold;
+  color: var(--main-color);
+  border-radius: 2px;
+  background-color: var(--tertiary-color);
+}
+
+@media only screen and (max-width: 950px) {
+  body {
+    font-weight: 200;
+    line-height: 1.25;
+  }
+
+  #contentBody {
+    width: 100vw;
+  }
+
+  #littlePaw {
+    max-width: 70vw;
+  }
+}

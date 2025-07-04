@@ -5,7 +5,7 @@
 
   --accent-color: #f7f1f1;
   --accent-secondary: #eaeaee;
-  --contrast-light: #8ba6ff;
+  --contrast-light: #6585ee;
 
   --header-height: 8vh;
   --footer-height: 12vh;
@@ -31,7 +31,7 @@
 }
 
 body {
-  animation: 0.5s ease-in 0s 1 fadeInOpacity;
+  animation: 1s ease-in 0s 1 fadeInOpacity;
   overflow-x: hidden;
   
   min-height: 100vh;
