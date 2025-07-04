@@ -3,6 +3,15 @@ body {
   background: linear-gradient(90deg, var(--accent-color) 0%, var(--accent-secondary) 100%);
 }
 
+#contentHeader {
+  margin-top: 4vh;
+  text-align: center;
+}
+
+#contentHeader > h3 {
+  color: var(--tertiary-dark);
+}
+
 #contentBody {
   width: 80vw;
   min-height: var(--min-content-height);
@@ -38,5 +47,11 @@ body {
 
   #littlePaw {
     max-width: 70vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #contentHeader {
+    font-size: 0.7em;
   }
 }

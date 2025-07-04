@@ -1,11 +1,12 @@
 :root {
-  --main-color: #dfdfe4;
-  --secondary-color: #dfdfe4;
-  --tertiary-color: #16161d;
+  --main-color: #e4dfdf;
+  --secondary-color: #e4dfdf;
+  --tertiary-color: #C8102E;
+  --tertiary-dark: #960C22;
 
   --accent-color: #f7f1f1;
-  --accent-secondary: #eaeaee;
-  --contrast-light: #6585ee;
+  --accent-secondary: #eeeaea;
+  --contrast-light: #ffb039;
 
   --header-height: 8vh;
   --footer-height: 12vh;

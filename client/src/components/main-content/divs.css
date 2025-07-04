@@ -40,7 +40,7 @@
     padding-bottom: 2vh;
 
     font-weight: 100;
-    border-bottom: 4px solid var(--contrast-light);
+    border-bottom: 4px solid var(--tertiary-dark);
 
     display: flex;
     align-items: center;
@@ -66,7 +66,7 @@
 @media only screen and (max-width: 600px) {
     #infoHeader {
         font-size: var(--mobile-header-font);
-        border-bottom: 2px solid var(--contrast-light);
+        border-bottom: 2px solid var(--tertiary-dark);
     }
 
     #infoTemp {
@@ -98,12 +98,12 @@
 
     font-style: inherit;
     text-align: center;
-    border-bottom: 4px solid var(--contrast-light);
+    border-bottom: 4px solid var(--tertiary-dark);
 }
 
 #graphsHeader > button:hover {
     cursor: pointer;
-    color: #2b3763;
+    color: var(--tertiary-dark);
 }
 
 #graphsHeader > button > h2 {
@@ -131,6 +131,6 @@
 
     #graphsHeader > button {
         width: 34vw;
-        border-bottom: 2px solid var(--contrast-light);
+        border-bottom: 2px solid var(--tertiary-dark);
     }
 }

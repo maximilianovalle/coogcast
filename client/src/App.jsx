@@ -7,11 +7,18 @@ import Footer from './components/Footer.jsx';
 import DisplayDiv from './components/main-content/displayDiv.jsx';
 import GraphsDiv from './components/main-content/graphsDiv.jsx';
 
+import { FaLocationDot } from "react-icons/fa6";
+
 function App() {
   return (<div>
     <Header />
 
     <div id="contentBody">
+
+      <div id="contentHeader">
+        <h1>University of Houston</h1>
+        <h3><FaLocationDot /> 800 Calhoun Road, Houston, Texas 77004</h3>
+      </div>
       
       <DisplayDiv />
 

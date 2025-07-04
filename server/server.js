@@ -14,7 +14,7 @@ const PORT = 8080;
 app.get("/getRecent", async (req, res) => {
     try {
         const result = await db.query('SELECT * FROM weather ORDER BY "currTimestamp" DESC LIMIT 1');
-        console.log("Most recent temperature snapshot fetched.");
+        console.log("Most recent snapshot fetched.");
         res.json({
             timestamp: result.rows[0].currTimestamp,
             temp_fahrenheit: result.rows[0].tempFahrenheit,

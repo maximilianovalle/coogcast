@@ -28,7 +28,7 @@ function DisplayDiv() {
         setHumidity(response.data.humidity)
 
         console.log("Retreived temperature + humidity snapshot.");
-    }
+    };
 
     useEffect(() => {
         getRecent();
