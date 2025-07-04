@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import './App.css';
 import axios from 'axios';
+import './App.css';
 
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
@@ -8,18 +8,6 @@ import DisplayDiv from './components/main-content/displayDiv.jsx';
 import GraphsDiv from './components/main-content/graphsDiv.jsx';
 
 function App() {
-  const [array, setArray] = useState([]);
-
-  const fetchAPI = async () => {
-    const response = await axios.get("http://localhost:8080/api");
-    setArray(response.data.fruits);
-    console.log(response);
-  };
-
-  useEffect(() => {
-    fetchAPI();
-  }, []);
-
   return (<div>
     <Header />
 

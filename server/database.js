@@ -20,3 +20,4 @@ const testDBConnection = async () => {
 };
 
 testDBConnection();
+module.exports = pool;

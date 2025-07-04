@@ -10,10 +10,21 @@ app.use(cors(corsOptions));
 
 const PORT = 8080;
 
-// sends fruits array as response when request is made to /api route
-app.get("/api", (req, res) => {
-    res.json({ fruits: ["apple", "banana", "cherry"] })
-});
+// displayDiv.jsx /getRecent
+app.get("/getRecent", async (req, res) => {
+    try {
+        const result = await db.query('SELECT * FROM weather ORDER BY "currTimestamp" DESC LIMIT 1');
+        console.log("Most recent temperature snapshot fetched.");
+        res.json({
+            timestamp: result.rows[0].currTimestamp,
+            temp_fahrenheit: result.rows[0].tempFahrenheit,
+            humidity: result.rows[0].humidityPercentage,
+        });
+    } catch (error) {
+        console.error("ERROR: unable to fetch most recent temperature snapshot. ")
+        res.json(500).json({ error: "Failed to fetch data." });
+    }
+})
 
 // run app
 app.listen(PORT, () => {
