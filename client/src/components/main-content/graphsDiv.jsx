@@ -6,19 +6,33 @@ import { Chart as ChartJS } from "chart.js/auto";
 import { Line, Bar } from 'react-chartjs-2';
 
 function GraphsDiv() {
-    // graph data
-
     const [tempArr, setTempArr] = useState([]);
     const [humidArr, setHumidArr] = useState([]);
     const [hoursArr, setHours] = useState([]);
 
-    const [TEST_TEMP_ARR, SET_TEST_TEMP_ARR] = useState([35.6, 42.2, 40.3, 31.2, 92.8]);
-    const [TEST_HUMID_ARR, SET_TEST_HUMID_ARR] = useState([50.1, 48.9, 53, 49, 52.6, 100]);
-    const [TEST_HOURS_ARR, SET_TEST_HOURS_ARR] = useState(["2:52 PM", "12:57 PM", "12:43 PM", "3:12 PM", "2:05 PM"])
-
     const getPast = async () => {
-        const response = await axios.get('http://localhost:8080/getRecent');
-        // TODO: receive backend JSON response and store in appropriate arrays
+        const response = await axios.get('http://localhost:8080/getPast');
+        const snapshots = response.data;
+
+        const timestamps = snapshots.map(row => {
+            const hourObject = new Date(row.timestamp);
+            const hours = hourObject.getHours();
+            const minutes = hourObject.getMinutes();
+            const AMPM = hours >= 12 ? 'PM' : 'AM';
+            const hoursFormatted = hours > 12 ? hours - 12 : hours;
+            const minutesFormatted = minutes < 10 ? '0' + minutes : minutes;
+            return `${hoursFormatted}:${minutesFormatted} ${AMPM}`;
+        });
+
+        const temp_fahrenheit = snapshots.map(row => row.temp_fahrenheit);
+        const humidity = snapshots.map(row => row.humidity);
+        humidity.push(100);
+
+        setHours(timestamps);
+        setTempArr(temp_fahrenheit);
+        setHumidArr(humidity);
+
+        console.log("Retrieved past snapshots: ", snapshots);
     }
 
     useEffect(() => {
@@ -42,7 +56,7 @@ function GraphsDiv() {
     }
 
 
-    // red tab underline
+    // red active tab
 
     const underlineTemp = {
         borderBottom: tempDiv ? '4px solid #960C22' : '4px solid transparent',
@@ -68,11 +82,11 @@ function GraphsDiv() {
             <div id="tempGraph">
                 <Line 
                     data={{
-                        labels: TEST_HOURS_ARR, // x-axis
+                        labels: hoursArr, // x-axis
                         datasets: [
                             {
                                 label: "Fahrenheit",
-                                data: TEST_TEMP_ARR, // y-axis
+                                data: tempArr, // y-axis
                                 borderColor: '#C8102E',
                                 backgroundColor: '#C8102E'
                             }
@@ -109,11 +123,11 @@ function GraphsDiv() {
             <div id="humidityGraph">
                 <Bar 
                     data={{
-                        labels: TEST_HOURS_ARR, // x-axis
+                        labels: hoursArr, // x-axis
                         datasets: [
                             {
                                 label: "%",
-                                data: TEST_HUMID_ARR, // y-axis
+                                data: humidArr, // y-axis
                                 backgroundColor: '#C8102E'
                             }
                         ]
