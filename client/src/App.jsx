@@ -25,7 +25,7 @@ function App() {
       <GraphsDiv />
 
       <div id="littlePaw">
-        <p>Meet <a href="https://github.com/maximilianovalle/little-paw" target="_blank" rel="noopener noreferrer">Little Paw</a>, the IoT device working to serve you this data!</p>
+        <p>Meet <a href="https://github.com/maximilianovalle/little-paw" target="_blank" rel="noopener noreferrer">Little Paw</a>, the IoT device working to gather this data!</p>
       </div>
 
     </div>

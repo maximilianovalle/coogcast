@@ -9,7 +9,7 @@ function GraphsDiv() {
     // graph data
 
     const [tempArr, setTempArr] = useState([]);
-    const [humidityArr, setHumidityArr] = useState([]);
+    const [humidArr, setHumidArr] = useState([]);
     const [hoursArr, setHours] = useState([]);
 
     const [TEST_TEMP_ARR, SET_TEST_TEMP_ARR] = useState([35.6, 42.2, 40.3, 31.2, 32.9]);
@@ -40,7 +40,7 @@ function GraphsDiv() {
         setHumidDiv(1);
         setTempDiv(0);
     }
-    
+
 
     // red tab underline
 
@@ -61,6 +61,8 @@ function GraphsDiv() {
             <button onClick={() => clickTempDiv()} style={underlineTemp}><h2 id="tempTitle">Recent Temperature</h2></button>
             <button onClick={() => clickHumidDiv()} style={underlineHumid}><h2 id="humidityTitle">Recent Humidity</h2></button>
         </div>
+
+        {/* temperature graph */}
 
         { tempDiv ? (
             <div id="tempGraph">
@@ -100,6 +102,8 @@ function GraphsDiv() {
                 />
             </div>
         ) : (<></>)}
+
+        {/* humidity graph */}
 
         { humidDiv ? (
             <div id="humidityGraph">
