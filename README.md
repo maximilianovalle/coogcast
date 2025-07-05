@@ -11,7 +11,7 @@
 
   <p align="center">
     University of Houston's current temperature and humidity tracked hourly with "<a href="https://github.com/maximilianovalle/little-paw" target="_blank" rel="noopener noreferrer">Little Paw</a>"! Check out the data real-time at <a href="" target="_blank" rel="noopener noreferrer">TBA</a>!
-    <br />
+    <br /><br />
     <a href="https://github.com/maximilianovalle/coogcast/issues/new">Report Bug</a>
     &middot;
     <a href="https://github.com/maximilianovalle/coogcast/issues/new">Request Feature</a>
@@ -125,8 +125,7 @@ Distributed under the Unlicense License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Maximiliano Ovalle - maximiliano.j.ovalle@gmail.com
-
+Maximiliano Ovalle - maximiliano.j.ovalle@gmail.com <br />
 Project Link: [https://github.com/maximilianovalle/coogcast](https://github.com/maximilianovalle/coogcast)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
