@@ -12,7 +12,7 @@ function GraphsDiv() {
     const [humidArr, setHumidArr] = useState([]);
     const [hoursArr, setHours] = useState([]);
 
-    const [TEST_TEMP_ARR, SET_TEST_TEMP_ARR] = useState([35.6, 42.2, 40.3, 31.2, 32.9]);
+    const [TEST_TEMP_ARR, SET_TEST_TEMP_ARR] = useState([35.6, 42.2, 40.3, 31.2, 92.8]);
     const [TEST_HUMID_ARR, SET_TEST_HUMID_ARR] = useState([50.1, 48.9, 53, 49, 52.6, 100]);
     const [TEST_HOURS_ARR, SET_TEST_HOURS_ARR] = useState(["2:52 PM", "12:57 PM", "12:43 PM", "3:12 PM", "2:05 PM"])
 
