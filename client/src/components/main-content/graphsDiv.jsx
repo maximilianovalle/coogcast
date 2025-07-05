@@ -6,6 +6,8 @@ import { Chart as ChartJS } from "chart.js/auto";
 import { Line, Bar } from 'react-chartjs-2';
 
 function GraphsDiv() {
+    // graph data
+
     const [tempArr, setTempArr] = useState([]);
     const [humidityArr, setHumidityArr] = useState([]);
     const [hoursArr, setHours] = useState([]);
@@ -23,95 +25,119 @@ function GraphsDiv() {
         getPast();
     }, []);
 
+
+    // graph tab component
+
+    const [tempDiv, setTempDiv] = useState(1);
+    const [humidDiv, setHumidDiv] = useState(0);
+
+    const clickTempDiv = () => {
+        setTempDiv(1);
+        setHumidDiv(0);
+    }
+
+    const clickHumidDiv = () => {
+        setHumidDiv(1);
+        setTempDiv(0);
+    }
+    
+
+    // red tab underline
+
+    const underlineTemp = {
+        borderBottom: tempDiv ? '4px solid #960C22' : '4px solid transparent',
+        color: tempDiv ? '#960C22' : '',
+    };
+
+    const underlineHumid = {
+        borderBottom: humidDiv ? '4px solid #960C22' : '4px solid transparent',
+        color: humidDiv ? '#960C22' : '',
+    };
+
+
     return ( <div className='divContainer'>
 
         <div id="graphsHeader">
-            <button><h2 id="tempTitle">Temperature</h2></button>
-            <button><h2 id="humidityTitle">Humidity</h2></button>
+            <button onClick={() => clickTempDiv()} style={underlineTemp}><h2 id="tempTitle">Recent Temperature</h2></button>
+            <button onClick={() => clickHumidDiv()} style={underlineHumid}><h2 id="humidityTitle">Recent Humidity</h2></button>
         </div>
 
-        <div id="tempGraph">
-            <Line 
-                data={{
-                    labels: TEST_HOURS_ARR, // x-axis
-                    datasets: [
-                        {
-                            label: "Temperature",
-                            data: TEST_TEMP_ARR, // y-axis
-                            borderColor: '#C8102E',
-                            backgroundColor: '#C8102E'
-                        }
-                    ]
-                }}
+        { tempDiv ? (
+            <div id="tempGraph">
+                <Line 
+                    data={{
+                        labels: TEST_HOURS_ARR, // x-axis
+                        datasets: [
+                            {
+                                label: "Fahrenheit",
+                                data: TEST_TEMP_ARR, // y-axis
+                                borderColor: '#C8102E',
+                                backgroundColor: '#C8102E'
+                            }
+                        ]
+                    }}
 
-                options={{
-                    plugins: {
-                        legend: {
-                            display: false,
-                        }
-                    },
-                    scales: {
-                        x: {
-                            ticks: {
-                                color: 'black',
-                                font: {
-                                    size: 14,
+                    options={{
+                        scales: {
+                            x: {
+                                ticks: {
+                                    color: 'black',
+                                    font: {
+                                        size: 14,
+                                    }
                                 }
-                            }
-                        },
-                        y: {
-                            ticks: {
-                                color: 'black',
-                                font: {
-                                    size: 14,
+                            },
+                            y: {
+                                ticks: {
+                                    color: 'black',
+                                    font: {
+                                        size: 14,
+                                    }
                                 }
                             }
                         }
-                    }
-                }}
-            />
-        </div>
+                    }}
+                />
+            </div>
+        ) : (<></>)}
 
-        <div id="humidityGraph">
-            <Bar 
-                data={{
-                    labels: TEST_HOURS_ARR, // x-axis
-                    datasets: [
-                        {
-                            label: "Humidity",
-                            data: TEST_HUMID_ARR, // y-axis
-                            backgroundColor: '#C8102E'
-                        }
-                    ]
-                }}
+        { humidDiv ? (
+            <div id="humidityGraph">
+                <Bar 
+                    data={{
+                        labels: TEST_HOURS_ARR, // x-axis
+                        datasets: [
+                            {
+                                label: "%",
+                                data: TEST_HUMID_ARR, // y-axis
+                                backgroundColor: '#C8102E'
+                            }
+                        ]
+                    }}
 
-                options={{
-                    plugins: {
-                        legend: {
-                            display: false,
-                        }
-                    },
-                    scales: {
-                        x: {
-                            ticks: {
-                                color: 'black',
-                                font: {
-                                    size: 14,
+                    options={{
+                        scales: {
+                            x: {
+                                ticks: {
+                                    color: 'black',
+                                    font: {
+                                        size: 14,
+                                    }
                                 }
-                            }
-                        },
-                        y: {
-                            ticks: {
-                                color: 'black',
-                                font: {
-                                    size: 14,
+                            },
+                            y: {
+                                ticks: {
+                                    color: 'black',
+                                    font: {
+                                        size: 14,
+                                    }
                                 }
                             }
                         }
-                    }
-                }}
-            />
-        </div>
+                    }}
+                />
+            </div>
+        ) : (<></>)}
 
     </div> )
 }
