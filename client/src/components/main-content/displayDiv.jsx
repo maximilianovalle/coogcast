@@ -18,16 +18,16 @@ function DisplayDiv() {
         const hourObject = new Date(timestamp);
         const hours = hourObject.getHours();
         const minutes = hourObject.getMinutes();
-        const hoursFormatted = hours < 10 ? '0' + hours : hours;
-        const minutesFormatted = minutes < 10 ? '0' + minutes : minutes;
         const AMPM = hours >= 12 ? 'PM' : 'AM';
+        const hoursFormatted = hours > 12 ? hours - 12 : hours;
+        const minutesFormatted = minutes < 10 ? '0' + minutes : minutes;
 
         setDate(dateObject.toLocaleDateString('en-US', options));
         setHour(`${hoursFormatted}:${minutesFormatted} ${AMPM}`);
         setTempF(response.data.temp_fahrenheit);
         setHumidity(response.data.humidity)
 
-        console.log("Retreived temperature + humidity snapshot.");
+        console.log("Retreived current snapshot.");
     };
 
     useEffect(() => {

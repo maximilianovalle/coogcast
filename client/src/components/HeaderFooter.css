@@ -5,7 +5,8 @@
 
     text-align: center;
     color: var(--accent-color);
-    background-color: var(--tertiary-color);
+    background: var(--tertiary-color);
+    background: linear-gradient(90deg, var(--tertiary-dark) 0%, var(--tertiary-color) 100%);
 
     display: flex;
     align-items: center;

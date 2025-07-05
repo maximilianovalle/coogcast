@@ -17,7 +17,7 @@ function App() {
 
       <div id="contentHeader">
         <h1>University of Houston</h1>
-        <h3><FaLocationDot /> 800 Calhoun Road, Houston, Texas 77004</h3>
+        <h3><FaLocationDot /> 4302 University Dr, Houston, TX 77004</h3>
       </div>
       
       <DisplayDiv />

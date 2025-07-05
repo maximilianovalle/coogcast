@@ -32,7 +32,7 @@ body {
   font-weight: bold;
   color: var(--main-color);
   border-radius: 2px;
-  background-color: var(--tertiary-color);
+  background-color: var(--tertiary-dark);
 }
 
 @media only screen and (max-width: 950px) {
