@@ -10,8 +10,8 @@ app.use(cors(corsOptions));
 
 const PORT = 8080;
 
-// displayDiv.jsx /getRecent
-app.get("/getRecent", async (req, res) => {
+// displayDiv.jsx /weather/recent
+app.get("/weather/recent", async (req, res) => {
     try {
         const result = await db.query('SELECT * FROM weather ORDER BY "currTimestamp" DESC LIMIT 1');
         console.log("Most recent snapshot fetched.");
@@ -21,13 +21,13 @@ app.get("/getRecent", async (req, res) => {
             humidity: result.rows[0].humidityPercentage,
         });
     } catch (error) {
-        console.error("ERROR: unable to fetch most recent snapshot. ");
-        res.json(500).json({ error: "Failed to fetch data." });
+        console.error("ERROR: unable to fetch most recent snapshot.");
+        res.status(500).json({ error: "Failed to fetch data." });
     }
 })
 
-// graphsDiv.jsx /getPast
-app.get("/getPast", async (req, res) => {
+// graphsDiv.jsx /weather/past
+app.get("/weather/past", async (req, res) => {
     try {
         const result = await db.query('SELECT * FROM weather ORDER BY "currTimestamp" DESC LIMIT 5');
 

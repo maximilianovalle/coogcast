@@ -11,7 +11,7 @@ function GraphsDiv() {
     const [hoursArr, setHours] = useState([]);
 
     const getPast = async () => {
-        const response = await axios.get('http://localhost:8080/getPast');
+        const response = await axios.get('http://localhost:8080/weather/past');
         const snapshots = response.data;
 
         const timestamps = snapshots.map(row => {

@@ -9,7 +9,7 @@ function DisplayDiv() {
     const [hour, setHour] = useState("");
 
     const getRecent = async () => {
-        const response = await axios.get("http://localhost:8080/getRecent");
+        const response = await axios.get("http://localhost:8080/weather/recent");
         
         const timestamp = response.data.timestamp;
         const dateObject = new Date(Date.parse(timestamp));
