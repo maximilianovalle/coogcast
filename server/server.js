@@ -31,30 +31,36 @@ app.get("/weather/past", async (req, res) => {
     try {
         const result = await db.query('SELECT * FROM weather ORDER BY "currTimestamp" DESC LIMIT 5');
 
-        const resultRows = [
-            { timestamp: result.rows[4].currTimestamp, temp_fahrenheit: result.rows[4].tempFahrenheit, humidity: result.rows[4].humidityPercentage },
-            { timestamp: result.rows[3].currTimestamp, temp_fahrenheit: result.rows[3].tempFahrenheit, humidity: result.rows[3].humidityPercentage },
-            { timestamp: result.rows[2].currTimestamp, temp_fahrenheit: result.rows[2].tempFahrenheit, humidity: result.rows[2].humidityPercentage },
-            { timestamp: result.rows[1].currTimestamp, temp_fahrenheit: result.rows[1].tempFahrenheit, humidity: result.rows[1].humidityPercentage },
-            { timestamp: result.rows[0].currTimestamp, temp_fahrenheit: result.rows[0].tempFahrenheit, humidity: result.rows[0].humidityPercentage },
-        ];
+        const resultRows = result.rows.slice().reverse().map(row => ({
+            timestamp: row.currTimestamp,
+            temp_fahrenheit: row.tempFahrenheit,
+            humidity: row.humidityPercentage,
+        }));
+
+        // const resultRows = [
+        //     { timestamp: result.rows[4].currTimestamp, temp_fahrenheit: result.rows[4].tempFahrenheit, humidity: result.rows[4].humidityPercentage },
+        //     { timestamp: result.rows[3].currTimestamp, temp_fahrenheit: result.rows[3].tempFahrenheit, humidity: result.rows[3].humidityPercentage },
+        //     { timestamp: result.rows[2].currTimestamp, temp_fahrenheit: result.rows[2].tempFahrenheit, humidity: result.rows[2].humidityPercentage },
+        //     { timestamp: result.rows[1].currTimestamp, temp_fahrenheit: result.rows[1].tempFahrenheit, humidity: result.rows[1].humidityPercentage },
+        //     { timestamp: result.rows[0].currTimestamp, temp_fahrenheit: result.rows[0].tempFahrenheit, humidity: result.rows[0].humidityPercentage },
+        // ];
 
         res.json(resultRows);
     } catch (error) {
         console.error("ERROR: unable to fetch past snapshots.");
-        res.json(500).json({ error: "Failed to fetch data." });
+        res.status(500).json({ error: "Failed to fetch data." });
     }
 })
 
 // little-paw /weather
-app.post("/weather", async (req, res) => {
-    try {
-        console.log("LITTLE-PAW: ", req);
-    } catch (error) {
-        console.error("ERROR: unable to post current temperature + humidity.");
-        res.json(500).json({ error: "Failed to post data." });
-    }
-})
+// app.post("/weather", async (req, res) => {
+//     try {
+//         console.log("LITTLE-PAW: ", req);
+//     } catch (error) {
+//         console.error("ERROR: unable to post current temperature + humidity.");
+//         res.status(500).json({ error: "Failed to post data." });
+//     }
+// })
 
 // run app
 app.listen(PORT, () => {

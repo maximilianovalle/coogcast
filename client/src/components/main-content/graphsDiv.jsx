@@ -18,6 +18,7 @@ function GraphsDiv() {
             const hourObject = new Date(row.timestamp);
             const hours = hourObject.getHours();
             const minutes = hourObject.getMinutes();
+
             const AMPM = hours >= 12 ? 'PM' : 'AM';
             const hoursFormatted = hours > 12 ? hours - 12 : hours;
             const minutesFormatted = minutes < 10 ? '0' + minutes : minutes;
@@ -26,13 +27,10 @@ function GraphsDiv() {
 
         const temp_fahrenheit = snapshots.map(row => row.temp_fahrenheit);
         const humidity = snapshots.map(row => row.humidity);
-        humidity.push(100);
 
         setHours(timestamps);
         setTempArr(temp_fahrenheit);
         setHumidArr(humidity);
-
-        console.log("Retrieved past snapshots: ", snapshots);
     }
 
     useEffect(() => {
@@ -104,6 +102,8 @@ function GraphsDiv() {
                                 }
                             },
                             y: {
+                                suggestedMin: 65,
+                                suggestedMax: 65,
                                 ticks: {
                                     color: 'black',
                                     font: {
@@ -144,6 +144,7 @@ function GraphsDiv() {
                                 }
                             },
                             y: {
+                                suggestedMax: 100,
                                 ticks: {
                                     color: 'black',
                                     font: {

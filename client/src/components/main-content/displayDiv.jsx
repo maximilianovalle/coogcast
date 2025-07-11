@@ -25,9 +25,7 @@ function DisplayDiv() {
         setDate(dateObject.toLocaleDateString('en-US', options));
         setHour(`${hoursFormatted}:${minutesFormatted} ${AMPM}`);
         setTempF(response.data.temp_fahrenheit);
-        setHumidity(response.data.humidity)
-
-        console.log("Retreived current snapshot.");
+        setHumidity(response.data.humidity);
     };
 
     useEffect(() => {
@@ -42,8 +40,8 @@ function DisplayDiv() {
         </div>
 
         <div>
-            <h1 id="infoTemp">{tempF} °F</h1>
-            <h3 id="infoHumidity">{humidity}% humidity</h3>
+            <h1 id="infoTemp">{tempF ?? "--"} °F</h1>
+            <h3 id="infoHumidity">{humidity ?? "-- "}% humidity</h3>
         </div>
 
     </div> )
