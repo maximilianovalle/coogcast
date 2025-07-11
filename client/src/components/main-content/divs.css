@@ -84,6 +84,7 @@
 #graphsHeader {
     width: 70%;
     font-weight: 100;
+    font-size: 0.8em;
 
     display: flex;
     align-items: center;
@@ -94,6 +95,7 @@
     all: unset;
 
     width: 14vw;
+    min-height: 6vh;
     margin-bottom: 1vh;
 
     font-style: inherit;
