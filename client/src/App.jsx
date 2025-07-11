@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setShowSpinner(0);
-    }, 3000);
+    }, 1000);
   }, []);
 
   return (<div>
