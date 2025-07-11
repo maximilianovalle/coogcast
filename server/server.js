@@ -4,7 +4,7 @@ const db = require('./database');   // database.js connection
 
 const cors = require('cors');
 const corsOptions = {
-    origin: ["http://localhost:5173"],   // accept requests from this url only
+    origin: [process.env.CLIENT_URL],   // accept requests from this url only
 };
 app.use(cors(corsOptions));
 
