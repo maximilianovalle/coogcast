@@ -8,7 +8,7 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 // displayDiv.jsx /weather/recent
 app.get("/weather/recent", async (req, res) => {
