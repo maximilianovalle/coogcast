@@ -141,6 +141,7 @@ Project Link: [https://github.com/maximilianovalle/coogcast](https://github.com/
 * [University of Houston Brand Style Guide](https://uh.edu/brand/brand-identity/style-guide/)
 * [Connect with pgAdmin](https://aiven.io/docs/products/postgresql/howto/connect-pgadmin)
 * [Connect with NodeJS](https://aiven.io/docs/products/postgresql/howto/connect-node)
+* [Deploy your MERN app (Node & React) to Render & Netlify](https://www.youtube.com/watch?v=o_UtxjDYb78)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
