@@ -46,6 +46,16 @@ app.get("/weather/past", async (req, res) => {
     }
 })
 
+// little-paw /weather
+app.post("/weather", async (req, res) => {
+    try {
+        console.log("LITTLE-PAW: ", req);
+    } catch (error) {
+        console.error("ERROR: unable to post current temperature + humidity.");
+        res.json(500).json({ error: "Failed to post data." });
+    }
+})
+
 // run app
 app.listen(PORT, () => {
     console.log(`✔ Server started on port ${PORT}.`);

@@ -1,12 +1,17 @@
 require('dotenv').config();
+const fs = require('fs');
 const { Pool } = require('pg');
 
 const pool = new Pool ({
-    host: 'localhost',
-    port: 5432,
+    host: process.env.HOST,
+    port: process.env.PORT,
     user: process.env.USERNAME,
     password: process.env.PASSWORD,
     database: process.env.DB,
+    ssl: {
+        rejectUnauthorized: true,
+        ca: fs.readFileSync("./ca.pem").toString(),
+    },
 });
 
 const testDBConnection = async () => {
