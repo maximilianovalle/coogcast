@@ -139,6 +139,8 @@ Project Link: [https://github.com/maximilianovalle/coogcast](https://github.com/
 * [Learn React ChartJS in 8 Minutes](https://www.youtube.com/watch?v=6q5d3Z1-5kQ&ab_channel=CodeComplete)
 * [React Icons](https://react-icons.github.io/react-icons/search)
 * [University of Houston Brand Style Guide](https://uh.edu/brand/brand-identity/style-guide/)
+* [Connect with pgAdmin](https://aiven.io/docs/products/postgresql/howto/connect-pgadmin)
+* [Connect with NodeJS](https://aiven.io/docs/products/postgresql/howto/connect-node)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
