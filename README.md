@@ -10,7 +10,7 @@
   <h3 align="center">Coogcast</h3>
 
   <p align="center">
-    University of Houston's current temperature and humidity tracked hourly with "<a href="https://github.com/maximilianovalle/little-paw" target="_blank" rel="noopener noreferrer">Little Paw</a>"! Check out the data real-time at <a href="https://coogcast.com" target="_blank" rel="noopener noreferrer">Coogcast.com</a>!
+    University of Houston's current temperature and humidity tracked hourly with "<a href="https://github.com/maximilianovalle/little-paw" target="_blank" rel="noopener noreferrer">Little Paw</a>"! Check out the data real-time at <a href="https://coogcast.com" target="_blank" rel="noopener noreferrer">Coogcast.com</a>! <strong>Note:</strong> sometimes the data may take a few minutes to display properly due to Coogcast being deployed on free services! If you see "--" instead of true temperature or humidity values, please allow some time for the site to fully render!
     <br /><br />
     <a href="https://github.com/maximilianovalle/coogcast/issues/new">Report Bug</a>
     &middot;
