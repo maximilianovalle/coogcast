@@ -1,0 +1,62 @@
+#notifBody {
+    --notif-width: 45%;
+
+    width: var(--notif-width);
+    min-height: 4vh;
+    padding: 4vh 2vw;
+    box-sizing: border-box;
+
+    text-align: center;
+    text-wrap: pretty;
+
+    background-color: var(--contrast-light);
+    border-radius: 2px;
+
+    position: fixed;
+    left: calc(calc(100% - var(--notif-width))/2);
+    top: 4vh;
+}
+
+.notifIcon {
+    font-size: 32px;
+
+    position: absolute;
+    right: 1vw;
+    top: 2vh;
+}
+
+.notifIcon:hover {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 950px) {
+    #notifBody {
+        --notif-ipad-width: 65%;
+
+        padding: 2vh 2vw;
+        width: var(--notif-ipad-width);
+        left: calc(calc(100% - var(--notif-ipade-width))/2);
+    }
+
+    .notifIcon {
+        right: 1vw;
+        top: 1vh;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #notifBody {
+        --notif-mobile-width: 90%;
+
+        padding: 4vh 6vw;
+        font-size: 0.7em;
+        width: var(--notif-mobile-width);
+        left: calc(calc(100% - var(--notif-mobile-width))/2);
+    }
+
+    .notifIcon {
+        font-size: 2em;
+        right: 3vw;
+        top: 2vh;
+    }
+}

@@ -5,6 +5,7 @@ import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import DisplayDiv from './components/main-content/displayDiv.jsx';
 import GraphsDiv from './components/main-content/graphsDiv.jsx';
+import Notification from './components/Notification.jsx';
 
 import { FaLocationDot } from "react-icons/fa6";
 
@@ -18,6 +19,7 @@ function App() {
   }, []);
 
   return (<div>
+
     <Header />
 
       { showSpinner ? (
@@ -26,6 +28,8 @@ function App() {
         </div>
       ) : (
         <div id="contentBody">
+            <Notification />
+
             <div id="contentHeader">
               <h1>University of Houston</h1>
               <h3><FaLocationDot /> 4302 University Dr, Houston, TX 77004</h3>
