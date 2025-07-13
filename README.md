@@ -7,10 +7,10 @@
     <img src="./client/public/paw.svg" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Coogcast</h3>
+  <h3 align="center">Coogcast WIP</h3>
 
   <p align="center">
-    University of Houston's current temperature and humidity tracked hourly with "<a href="https://github.com/maximilianovalle/little-paw" target="_blank" rel="noopener noreferrer">Little Paw</a>"! Check out the data real-time at <a href="https://coogcast.com" target="_blank" rel="noopener noreferrer">Coogcast.com</a>! <strong>Note:</strong> sometimes the data may take a few minutes to display properly due to Coogcast being deployed on free services! If you see "--" instead of true temperature or humidity values, please allow some time for the site to fully render!
+    University of Houston's current temperature and humidity tracked hourly with "<a href="https://github.com/maximilianovalle/little-paw" target="_blank" rel="noopener noreferrer">Little Paw</a>"! Check out the data real-time at <a href="https://coogcast.com" target="_blank" rel="noopener noreferrer">Coogcast.com</a>! <strong>Note:</strong> the data currently being displayed is dummy data! Little Paw to be deployed in the next few days...
     <br /><br />
     <a href="https://github.com/maximilianovalle/coogcast/issues/new">Report Bug</a>
     &middot;
@@ -66,7 +66,7 @@ Coogcast displays the most recent data retrieved by Little Paw, as well as some 
 ## Roadmap
 
 - [ ] Fix darkmode CSS styling
-- [ ] Connect Little Paw to backend + database
+- [ ] Connect Little Paw to backend
 
 See the [open issues](https://github.com/maximilianovalle/coogcast/issues) for a full list of proposed features (and known issues).
 
