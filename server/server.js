@@ -6,18 +6,17 @@ const cors = require('cors');
 
 const corsOptions = {
     // accept requests from these URLs only
-
-    // origin: [process.env.CLIENT_URL,
-    //     process.env.CLIENT_URL_SECOND,
-    // ],
-
-    origin: ["http://localhost:5173"],
+    origin: [process.env.CLIENT_URL,
+        process.env.CLIENT_URL_SECOND,
+        "http://localhost:5173"
+    ],
 };
 
 app.use(cors(corsOptions));
+app.use(express.json());    // parse JSON payloads
 
-// const PORT = process.env.PORT || 8080;
-const PORT = 8080;
+const PORT = process.env.PORT;
+// const PORT = 8080;   // development PORT
 
 // displayDiv.jsx /weather/recent
 app.get("/weather/recent", async (req, res) => {
@@ -55,13 +54,24 @@ app.get("/weather/past", async (req, res) => {
     }
 })
 
-// little-paw /weather
+// little-paw /weather/update
 app.post("/weather/update", async (req, res) => {
+    const authHeader = req.headers['x-device-secret'];
+
+    if (authHeader != process.env.ESP32_KEY) {
+        console.warn("Unauthorized device tried to POST data.");
+        return res.status(403).json({ error: "Unauthorized device." });
+    }
+
     try {
-        // TODO: POST DATA TO DATABASE
+        const { tempFahrenheit, humidityPercentage } = req.body;
+        await db.query ('INSERT INTO weather ("tempFahrenheit", "humidityPercentage") VALUES ($1, $2)', [tempFahrenheit, humidityPercentage]);
+
+        console.log(`✔ Data inserted: Temp=${tempFahrenheit}°F, Humidity=${humidityPercentage}%`);
+        res.status(200).json({ message: "Data retrieved and stored." });
     } catch (error) {
-        console.error("ERROR: unable to post current temperature + humidity.");
-        res.status(500).json({ error: "Failed to post data." });
+        console.error("ERROR: ", error);
+        res.status(500).json({ error: "Failed to retrieve and store data." });
     }
 })
 
