@@ -7,10 +7,10 @@
     <img src="./client/public/paw.svg" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Coogcast WIP</h3>
+  <h3 align="center">Coogcast</h3>
 
   <p align="center">
-    University of Houston's current temperature and humidity tracked hourly with "<a href="https://github.com/maximilianovalle/little-paw" target="_blank" rel="noopener noreferrer">Little Paw</a>"! Check out the data real-time at <a href="https://coogcast.com" target="_blank" rel="noopener noreferrer">Coogcast.com</a>! <strong>Note:</strong> the data currently being displayed is dummy data! Little Paw to be deployed in the next few days...
+    University of Houston's current temperature and humidity tracked hourly with "<a href="https://github.com/maximilianovalle/little-paw" target="_blank" rel="noopener noreferrer">Little Paw</a>"! Check out the data real-time at <a href="https://coogcast.com" target="_blank" rel="noopener noreferrer">Coogcast.com</a>!
     <br /><br />
     <a href="https://github.com/maximilianovalle/coogcast/issues/new">Report Bug</a>
     &middot;
@@ -30,7 +30,6 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -44,9 +43,7 @@
 
 ![Coogcast webpage](./screenshot.png)
 
-There are a ton of weather and climate websites out there, but how many of them use their own robot to get their data? Probably a lot, but here's another one!
-
-Coogcast displays the most recent data retrieved by Little Paw, as well as some graphs to help you visualize the data collected in the past few hours. Moved back home for the summer? Missing campus? Coogcast can help you feel a little closer to school - by making you remember all those sweaty treks to class you used to make! Phew! At least you're not back at UH in this weather!
+Coogcast displays the most recent climate data for the University of Houston retrieved by Little Paw, as well as some graphs to help you visualize the data collected in the past few hours. Moved back home for the summer? Missing campus? Coogcast can help you feel a little closer to school - by making you remember all those sweaty treks to class you used to make! Phew! At least you're not back at UH in this weather!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -58,17 +55,6 @@ Coogcast displays the most recent data retrieved by Little Paw, as well as some 
 * [![React][React.js]][React-url]
 * [![Express][Express.js]][Express-url]
 * [![PostgreSQL][PostgreSQL]][PostgreSQL-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Fix darkmode CSS styling
-- [ ] Connect Little Paw to backend
-
-See the [open issues](https://github.com/maximilianovalle/coogcast/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
